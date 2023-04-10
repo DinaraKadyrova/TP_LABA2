@@ -1,0 +1,51 @@
+﻿@model лаба2.Models.dataset
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1></h1>
+<h1>Пациент</h1>
+
+@Html.DisplayForModel()
+@using (Html.BeginForm("/Index", "dataset", FormMethod.Post))
+{
+    <p>
+        <label asp-for="name">Name</label><br />
+        <input type="text" asp-for="name" />
+        <span asp-validation-for="name" />
+    </p>
+
+    <p>
+        <label asp-for="lastname">Last name</label><br />
+        <input type="text" asp-for="lastname" />
+        <span asp-validation-for="lastname" />
+    </p>
+
+    <p>
+        <label asp-for="data">Birthday</label><br />
+        <input type="text" asp-for="data" />
+        <span asp-validation-for="data" />
+    </p>
+
+    <p>
+        <label asp-for="number">Phone number</label><br />
+        <input type="text" asp-for="number" />
+        <span asp-validation-for="number" />
+    </p>
+
+    <p>
+        <label asp-for="text">Reason</label><br />
+        <input type="text" asp-for="text" />
+        <span asp-validation-for="text" />
+    </p>
+
+    <p>
+        <label asp-for="sex">Primary reception</label><br />
+        <input type="text" asp-for="sex" />
+        <span asp-validation-for="sex" />
+    </p>
+
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+
+}
