@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 using лаба2.Models;
 
@@ -15,21 +16,13 @@ namespace лаба2.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            string content = @"<form method='post'>
-                <label>Name:</label><br />
-                <input name='name' /><br />
-                <label>Age:</label><br />
-                <input type='number' name='age' /><br />
-                <input type='submit' value='Send' />
-            </form>";
-            Response.ContentType = "text/html;charset=utf-8";
-            //await Response.WriteAsync(content);
             return View();
         }
         [HttpPost]
-        public IActionResult Index(dataset User)
+        public IActionResult Index(string id, string name, string lastname, DateTime data, uint number, string text, bool gender)
         {
-            return View(User);
+            string authData = $"ID: {id}   Name: {name}  LastName: {lastname} Birthday: {data} Number phone: {number} Adress: {text}  Gender: {gender}";
+            return Content(authData);
         }
         public IActionResult details()
         {

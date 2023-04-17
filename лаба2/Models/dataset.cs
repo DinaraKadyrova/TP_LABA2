@@ -27,6 +27,13 @@ namespace лаба2.Models
         public string? text { get; set; }
 
         [DisplayName("Пол")]
-        public bool sex { get; set; }
+        public bool gender { get; set; }
+    }
+
+    public enum gender
+    {
+        female,
+        male
+        
     }
 }

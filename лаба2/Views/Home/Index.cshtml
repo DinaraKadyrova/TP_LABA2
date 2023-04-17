@@ -3,49 +3,43 @@
     ViewData["Title"] = "Home Page";
 }
 <h1></h1>
-<h1>Пациент</h1>
-
-@Html.DisplayForModel()
-@using (Html.BeginForm("/Index", "dataset", FormMethod.Post))
-{
+<h1>Пользователь</h1>
+<form method="post">
     <p>
-        <label asp-for="name">Name</label><br />
-        <input type="text" asp-for="name" />
-        <span asp-validation-for="name" />
+        <label>Имя:</label><br />
+        <input type="text" name="name" />
     </p>
 
     <p>
-        <label asp-for="lastname">Last name</label><br />
-        <input type="text" asp-for="lastname" />
-        <span asp-validation-for="lastname" />
+        <label>Фамилия:</label><br />
+        <input type="text" name="lastame" />
     </p>
 
     <p>
-        <label asp-for="data">Birthday</label><br />
-        <input type="text" asp-for="data" />
-        <span asp-validation-for="data" />
+        <label>Дата рождения:</label><br />
+        <input type="date" name="data" />
     </p>
 
     <p>
-        <label asp-for="number">Phone number</label><br />
-        <input type="text" asp-for="number" />
-        <span asp-validation-for="number" />
+        <label>Электронная почта:</label><br />
+        <input type="email" name="number" />
     </p>
 
     <p>
-        <label asp-for="text">Reason</label><br />
-        <input type="text" asp-for="text" />
-        <span asp-validation-for="text" />
+        <label>Пол:</label><br />
+        <input name="gender" type="radio" value="male" />
+        <span>мужской</span> <br />
+        <input name="gender" type="radio" value="female" />
+        <span>женский</span> <br />
+        
     </p>
 
     <p>
-        <label asp-for="sex">Primary reception</label><br />
-        <input type="text" asp-for="sex" />
-        <span asp-validation-for="sex" />
+        <label>Адрес:</label><br />
+        <textarea name="text"></textarea>
     </p>
 
     <p>
-        <input type="submit" value="Save" />
+        <input type="submit" value="Отправить" />
     </p>
-
-}
+</form>
